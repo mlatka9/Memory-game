@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import StatCard from 'components/StatCard/StatCard';
 import React, { useState, useEffect } from 'react';
 import { formatTimer } from 'helpers/index.js';
-import { debounce } from 'lodash';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,13 +15,13 @@ const StatsPanel = React.memo(({ players, currentPlayer, timer }) => {
 
   useEffect(() => {
     console.log('ismob');
-    const toggleIsMobile = debounce(() => {
+    const toggleIsMobile = () => {
       if (window.innerWidth < 600) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
       }
-    }, 500);
+    };
     window.addEventListener('resize', toggleIsMobile);
 
     return () => document.removeEventListener('resize', toggleIsMobile);

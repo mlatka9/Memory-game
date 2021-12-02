@@ -12,9 +12,13 @@ const Wrapper = styled.div`
   }
 `;
 
-const MenuView = ({ toggleIsDuringGame, toggleMenu, restartCurrentGame }) => {
+const MenuView = ({ toggleIsDuringGame, toggleMenu, restartCurrentGame, resumeTimer }) => {
   const handleResetGame = () => {
     restartCurrentGame();
+    toggleMenu();
+  };
+  const handleResumeGame = () => {
+    resumeTimer();
     toggleMenu();
   };
   return (
@@ -25,7 +29,7 @@ const MenuView = ({ toggleIsDuringGame, toggleMenu, restartCurrentGame }) => {
       <Button hasDarkFont onClick={toggleIsDuringGame}>
         New Game
       </Button>
-      <Button hasDarkFont onClick={toggleMenu}>
+      <Button hasDarkFont onClick={handleResumeGame}>
         Resume Game
       </Button>
     </Wrapper>

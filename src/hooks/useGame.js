@@ -91,7 +91,7 @@ const useGame = ({ settings, toggleIsDuringGame }) => {
         setPreviousCardId(id);
       } else {
         setBoardBlock(true);
-        ref.current = setTimeout(() => handlePair(id), 500);
+        ref.current = setTimeout(() => handlePair(id), 800);
         setPreviousCardId(null);
       }
       hightlightCard(id);

@@ -32,10 +32,8 @@ const GameView = ({ toggleIsDuringGame, settings }) => {
     console.log('MENU EFFECT');
     if (menuIsOpen) {
       stopTimer();
-    } else {
-      resumeTimer();
     }
-  }, [menuIsOpen, stopTimer, resumeTimer]);
+  }, [menuIsOpen, stopTimer]);
 
   return (
     <Wrapper>
@@ -58,7 +56,12 @@ const GameView = ({ toggleIsDuringGame, settings }) => {
       ) : null}
       {menuIsOpen ? (
         <Modal>
-          <MenuView toggleIsDuringGame={toggleIsDuringGame} toggleMenu={toggleMenu} restartCurrentGame={restartCurrentGame} />
+          <MenuView
+            toggleIsDuringGame={toggleIsDuringGame}
+            toggleMenu={toggleMenu}
+            restartCurrentGame={restartCurrentGame}
+            resumeTimer={resumeTimer}
+          />
         </Modal>
       ) : null}
     </Wrapper>
