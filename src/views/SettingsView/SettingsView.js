@@ -1,44 +1,5 @@
-import styled from 'styled-components';
-import ViewWrapper from 'components/ViewWrapper/ViewWrapper';
+import { Wrapper, SettingsViewWrapper, ButtonsRow } from './SettingsView.styles';
 import Button from 'components/Button/Button';
-
-const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.black};
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  h1 {
-    font-size: 40;
-    color: ${({ theme }) => theme.colors.white};
-    margin-bottom: 70px;
-  }
-  p {
-    font-size: 20px;
-    color: ${({ theme }) => theme.colors.grey};
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 16px;
-  }
-  button {
-    margin-bottom: 33px;
-  }
-`;
-
-const ButtonsRow = styled.div`
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  ${Button} {
-    width: 100%;
-  }
-`;
-
-const SettingsViewWrapper = styled(ViewWrapper)`
-  display: flex;
-  flex-direction: column;
-`;
 
 const SettingsView = ({ settings, handleSettingChange, toggleIsDuringGame }) => {
   const { theme, playersNumber, gridSize } = settings;

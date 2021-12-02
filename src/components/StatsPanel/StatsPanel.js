@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import StatCard from 'components/StatCard/StatCard';
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { formatTimer } from 'helpers/index.js';
+import { debounce } from 'lodash';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,26 +11,24 @@ const Wrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-const formatTimer = (timeInSeconds) => {
-  const munutes = Math.floor(timeInSeconds / 60);
-  const seconds = timeInSeconds - munutes * 60;
-  return `${munutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-};
-
-const StatsPanel = React.memo(({ players, currentPlayer, timer, setTimer }) => {
-  console.log('stats panel');
-  let id = useRef(null);
+const StatsPanel = React.memo(({ players, currentPlayer, timer }) => {
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (players.length > 1) return;
+    console.log('ismob');
+    const toggleIsMobile = debounce(() => {
+      if (window.innerWidth < 600) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }, 500);
+    window.addEventListener('resize', toggleIsMobile);
 
-    id.current = setInterval(() => {
-      console.log('tik tak');
-      setTimer((prev) => prev + 1);
-    }, 1000);
+    return () => document.removeEventListener('resize', toggleIsMobile);
+  }, []);
 
-    return () => clearInterval(id.current);
-  }, [setTimer, players.length]);
+  console.log('stats panel');
 
   if (players.length === 1) {
     return (
@@ -44,7 +44,7 @@ const StatsPanel = React.memo(({ players, currentPlayer, timer, setTimer }) => {
       {players.map((player) => (
         <StatCard
           key={player.id}
-          title={`Player ${player.id}`}
+          title={isMobile ? `P ${player.id + 1}` : `Player ${player.id + 1}`}
           value={player.points}
           isCurrentUser={player.id === currentPlayer}
         />

@@ -1,32 +1,22 @@
-import styled from 'styled-components';
 import Button from 'components/Button/Button';
 import React from 'react';
+import { Wrapper } from './Header.styles';
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  span {
-    color: ${({ theme }) => theme.colors.black};
-    font-size: 40px;
-    font-weight: 700;
-  }
-  button {
-    margin: 8px;
-    padding: 12px 30px;
-    &:first-of-type {
-      margin-left: auto;
-    }
-  }
-`;
-
-const Header = React.memo(({ toggleIsDuringGame }) => {
+const Header = React.memo(({ toggleIsDuringGame, restartCurrentGame, toggleMenu }) => {
   console.log('header');
+
   return (
     <Wrapper>
       <span>memory</span>
-      <Button isDistinguish>Restart</Button>
+      <Button isDistinguish onClick={restartCurrentGame}>
+        Restart
+      </Button>
+
       <Button hasDarkFont onClick={toggleIsDuringGame}>
         New Game
+      </Button>
+      <Button isDistinguish onClick={toggleMenu}>
+        Menu
       </Button>
     </Wrapper>
   );
