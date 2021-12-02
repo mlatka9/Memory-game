@@ -29,7 +29,6 @@ const GameView = ({ toggleIsDuringGame, settings }) => {
   };
 
   useEffect(() => {
-    console.log('MENU EFFECT');
     if (menuIsOpen) {
       stopTimer();
     }

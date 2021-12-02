@@ -24,12 +24,9 @@ const useGame = ({ settings, toggleIsDuringGame }) => {
   }, []);
 
   useEffect(() => {
-    // if (isOpen) return;
     const isEveryCardGuessed = board.every((card) => card.status === 'isGuessed');
     if (isEveryCardGuessed) {
-      console.log('game end');
       handleOpenModal();
-      // toggleIsDuringGame();
     }
   }, [board, toggleIsDuringGame, handleOpenModal]);
 
@@ -65,13 +62,6 @@ const useGame = ({ settings, toggleIsDuringGame }) => {
 
       setBoardBlock(false);
       handleUpdatePlayerMoves(isGetPoint);
-
-      // const unmatchCards = board.filter((card) => !card.status);
-      // if (unmatchCards.length === 0) {
-      //   console.log('game end');
-      //   handleOpenModal();
-      //   // toggleIsDuringGame();
-      // }
     },
     [board, previousCardId]
   );

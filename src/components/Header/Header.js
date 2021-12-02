@@ -3,8 +3,6 @@ import React from 'react';
 import { Wrapper } from './Header.styles';
 
 const Header = React.memo(({ toggleIsDuringGame, restartCurrentGame, toggleMenu }) => {
-  console.log('header');
-
   return (
     <Wrapper>
       <span>memory</span>

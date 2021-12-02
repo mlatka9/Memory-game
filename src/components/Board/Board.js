@@ -25,7 +25,6 @@ const BoardWrapper = styled.div`
 `;
 
 const Board = React.memo(({ settings, board, handleGuess }) => {
-  console.log('board');
   return (
     <BoardWrapper size={settings.gridSize}>
       {board.map((card) => (

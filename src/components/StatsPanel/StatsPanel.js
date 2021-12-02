@@ -14,7 +14,6 @@ const StatsPanel = React.memo(({ players, currentPlayer, timer }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    console.log('ismob');
     const toggleIsMobile = () => {
       if (window.innerWidth < 600) {
         setIsMobile(true);
@@ -26,8 +25,6 @@ const StatsPanel = React.memo(({ players, currentPlayer, timer }) => {
 
     return () => document.removeEventListener('resize', toggleIsMobile);
   }, []);
-
-  console.log('stats panel');
 
   if (players.length === 1) {
     return (

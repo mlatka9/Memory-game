@@ -7,7 +7,6 @@ const useTimer = (isActive) => {
   let id = useRef(null);
 
   useEffect(() => {
-    console.log({ isTimerCount });
     if (!isTimerCount) {
       clearInterval(id.current);
     } else {

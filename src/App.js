@@ -10,7 +10,6 @@ import 'assets/FontAwesome/index';
 function App() {
   const [settings, setSettings] = useState({ theme: 'numbers', playersNumber: 1, gridSize: 4 });
   const [isDurringGame, setIsDurringGame] = useState(false);
-  console.log('app');
 
   const handleSettingChange = (setting, newValue) => {
     setSettings({
