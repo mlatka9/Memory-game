@@ -2,17 +2,6 @@
 
 This is a solution to the [Memory game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/memory-game-vse4WFPvM). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-  - [Screenshot](#screenshot)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
-
-
 
 ## Overview
 
@@ -28,12 +17,14 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/mlatka9/Memory-game](https://github.com/mlatka9/Memory-game)
+- Live Site URL: [https://www.netlify.com/](https://stoic-poitras-98eb0d.netlify.app)
 
 ### Screenshot
 
-![](./screenshot.jpg)
+
+![Desktop Layout](https://user-images.githubusercontent.com/72691985/144419585-5cca8610-b166-4d07-bf98-dd529b839165.PNG)
+
 
 ## My process
 
