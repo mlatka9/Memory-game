@@ -10,6 +10,7 @@ const useGame = ({ settings, toggleIsDuringGame }) => {
   let ref = useRef(null);
   const { handleOpenModal } = useModal();
 
+  
   const handleRestartGame = () => {
     setBoard(generateRandomBoard(settings.gridSize));
     setPreviousCardId(null);
